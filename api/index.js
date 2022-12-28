@@ -4,6 +4,7 @@ import cors from "cors";
 import http from "http";
 import mongoose from "mongoose";
 import "dotenv/config";
+import router from "./src/routes/index.js";
 
 const app = express();
 
@@ -12,7 +13,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 
-app.use("/api", routes);
+app.use("/api", router);
 
 const port = process.env.PORT || 5000;
 
